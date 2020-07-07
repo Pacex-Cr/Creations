@@ -1,0 +1,30 @@
+from selenium import webdriver
+import time
+
+driver = webdriver.Chrome()
+driver.maximize_window()
+url = "https://www.youtube.com"
+driver.get(url)
+
+time.sleep(1)
+
+driver.save_screenshot("YouTube HomePage.png")
+
+url = "https://youtu.be/DZfPCTfnp1I"
+driver.get(url)
+
+print(driver.title)
+time.sleep(8)
+if "Yana Yana" in driver.title:
+    driver.save_screenshot("Yana Yana - Veysel Mutlu.png")
+
+
+time.sleep (55)
+
+
+driver.back()
+# driver.front()
+time.sleep(1)
+
+driver.close
+
